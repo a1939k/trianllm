@@ -1,0 +1,13 @@
+{%- for message in messages %}
+{{- '<|im_start|>' + message.get('role', 'user') + '\n' }}
+{%- if message.get('tools') %}
+{{- message.get('tools') + '\n' }}
+{%- endif %}
+{%- if message.get('reasoning_content') %}
+{{- '<think>\n' + message.get('reasoning_content') + '\n</think>\n' }}
+{%- endif %}
+{{- message.get('content', '') + '<|im_end|>\n' }}
+{%- endfor %}
+{%- if add_generation_prompt %}
+{{- '<|im_start|>assistant\n' }}
+{%- endif %}

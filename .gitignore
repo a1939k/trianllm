@@ -1,0 +1,28 @@
+# Python 缓存与测试缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.pyright/
+
+# 本地虚拟环境和 IDE 配置
+.conda/
+.venv/
+venv/
+.vscode/
+.idea/
+
+# 训练数据、日志与模型权重不得提交
+checkpoints/
+runs/
+logs/
+wandb/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# 本地环境和认证信息
+.env
+.env.*
+!.env.example
